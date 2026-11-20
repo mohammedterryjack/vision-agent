@@ -1,0 +1,20 @@
+[Unit]
+Description=Vision agent service (bridge to dell-annotate on the Dell :8093, job socket, LAN viewer on the LAN address :8647)
+After=network-online.target
+
+[Service]
+EnvironmentFile=%h/Code/vision-agent/.env
+Type=simple
+WorkingDirectory=%h/Code/vision-agent
+ExecStart=/usr/bin/node %h/Code/vision-agent/service.js
+Restart=on-failure
+RestartSec=5
+MemoryMax=600M
+MemorySwapMax=0
+CPUQuota=200%
+CPUWeight=20
+Nice=10
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,44 @@
+# secrets and local config (never commit)
+.env
+.env.*
+!.env.example
+*.env.local
+*.key
+*.pem
+id_*
+*.token
+view.token
+# backups
+*.bak
+*.bak-*
+*.bak.*
+# dependencies, builds, caches
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+build/
+# job outputs and media
+/jobs/
+/runs/
+/scenes/
+/media/
+*.mp4
+*.mov
+*.wav
+*.mp3
+*.ply
+*.npz
+*.usdz
+*.part
+.pull-*.json
+# weights and models
+*.bin
+*.gguf
+*.safetensors
+*.ckpt
+*.pt
+*.onnx
+# logs
+*.log
